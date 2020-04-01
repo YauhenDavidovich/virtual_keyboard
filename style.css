@@ -10,14 +10,12 @@
 
 .keyboard {
   position: fixed;
-  left: 0;
+  margin: 0 auto;
   bottom: 0;
-  width: 100%;
-  padding: 5px 0;
-  background: #004134;
+  width: 80%;  
+  background: #2d3829;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  user-select: none;
-  height: 100px;
+  user-select: none;  
 }
 
 .key {
@@ -39,4 +37,9 @@
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   position: relative;
+}
+
+.clearfix {
+  display: block;
+  clear: both;
 }

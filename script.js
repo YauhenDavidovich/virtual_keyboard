@@ -100,20 +100,27 @@ const keyboardArea = document.querySelector('keyboard');
 
 // keyboard keys
 
-function createKeys(
-  keyboardKeysEngShiftOff,
-  keyboardKeysEngShiftOn,
-  keyboardKeysEng
-) {
-  for (let i = 0; i < keyboardKeysEngShiftOff.length; i += 1) {
-    const div = document.createElement('div');
-    div.className = 'key shift--on';
-    keyboardArea.append(div);
-    const sup = document.createElement('sup');
-    sup.innerHTML = keyboardKeysEngShiftOn[i];
-    div.append(sup);
-    const span = document.createElement('span');
-    span.innerHTML = keyboardKeysEngShiftOff[i];
-    div.append(span);
+// function createKeys(
+//   keyboardKeysShiftOff,
+//   keyboardKeysShiftOn,
+//   keyboardKeys
+// ) {
+//   for (let i = 0; i < keyboardKeysEngShiftOff.length; i += 1) {
+//     const div = document.createElement('div');
+//     div.className = 'key';
+//     keyboard.append(div);    
+// }
+// }
+
+
+keyboardKeysEng.forEach((key) => {
+  const div = document.createElement('div');
+  div.className = 'key';
+  div.innerHTML = key;
+  if (key === 'Enter') {
+    const br = document.createElement('br');
+    br.className = 'clearfix';
+    keyboard.append(br);
   }
-}
+  keyboard.append(div);  
+  });

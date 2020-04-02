@@ -12,10 +12,15 @@
   position: fixed;
   margin: 0 auto;
   bottom: 0;
-  width: 80%;  
+  width: 100%;
+  max-width: 800px;
   background: #2d3829;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  user-select: none;  
+  user-select: none;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .key {
@@ -31,12 +36,20 @@
   outline: none;
   cursor: pointer;
   display: inline-flex;
-  align-items: center;
+  font-family: 'Roboto', sans-serif;
   justify-content: center;
-  vertical-align: top;
-  padding: 0;
+  vertical-align: center;
+
   -webkit-tap-highlight-color: transparent;
   position: relative;
+}
+
+.key--extra {
+  width: 12%;
+}
+
+.key--extra__extra {
+  width: 36%;
 }
 
 .clearfix {

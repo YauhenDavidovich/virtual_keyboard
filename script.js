@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 // text area
 
 const textarea = document.createElement('textarea');
@@ -24,7 +25,9 @@ const keyboardKeysEngShiftOff = [
   '9',
   '0',
   '-',
-  '='
+  '=',
+  '\\',
+  'backspace'
 ];
 const keyboardKeysEngShiftOn = [
   '~',
@@ -39,10 +42,11 @@ const keyboardKeysEngShiftOn = [
   '(',
   ')',
   '_',
-  '+'
+  '+',
+  '|',
+  'backspace'
 ];
 const keyboardKeysEng = [
-  'backspace',
   'Tab',
   'q',
   'w',
@@ -56,8 +60,7 @@ const keyboardKeysEng = [
   'p',
   '[',
   ']',
-  '\\',
-  '|',
+  'Del',
   'CapsLock',
   'a',
   's',
@@ -84,7 +87,6 @@ const keyboardKeysEng = [
   '?',
   'Shift',
   'Up',
-  'Del',
   'Ctrl',
   'Win',
   'Alt',
@@ -100,27 +102,57 @@ const keyboardArea = document.querySelector('keyboard');
 
 // keyboard keys
 
-// function createKeys(
-//   keyboardKeysShiftOff,
-//   keyboardKeysShiftOn,
-//   keyboardKeys
-// ) {
-//   for (let i = 0; i < keyboardKeysEngShiftOff.length; i += 1) {
-//     const div = document.createElement('div');
-//     div.className = 'key';
-//     keyboard.append(div);    
-// }
-// }
-
-
-keyboardKeysEng.forEach((key) => {
-  const div = document.createElement('div');
-  div.className = 'key';
-  div.innerHTML = key;
-  if (key === 'Enter') {
-    const br = document.createElement('br');
-    br.className = 'clearfix';
-    keyboard.append(br);
+function createKeys(keyboardKeysEngShiftOn) {
+  for (let i = 0; i < keyboardKeysEngShiftOn.length; i++) {
+    const div = document.createElement('div');
+    div.className = 'key';
+    div.innerHTML = keyboardKeysEngShiftOn[i];
+    if (keyboardKeysEngShiftOn[i] === 'backspace') {
+      div.className = 'key key--extra';
+    }
+    keyboard.append(div);
+    if (i === 14) {
+      const divBr = document.createElement('div');
+      divBr.className = 'clearfix';
+      keyboard.append(divBr);
+    }
   }
-  keyboard.append(div);  
-  });
+  for (let i = 0; i < keyboardKeysEng.length; i++) {
+    const div = document.createElement('div');
+    div.className = 'key';
+    div.innerHTML = keyboardKeysEng[i];
+    if (
+      keyboardKeysEng[i] === 'CapsLock' ||
+      keyboardKeysEng[i] === 'Shift' ||
+      keyboardKeysEng[i] === 'Tab' ||
+      keyboardKeysEng[i] === 'Enter'
+    ) {
+      div.className = 'key key--extra';
+    }
+    if (keyboardKeysEng[i] === 'space') {
+      div.className = 'key key--extra__extra';
+    }
+    if (i === 14 || i === 27 || i === 40) {
+      const divBr = document.createElement('div');
+      divBr.className = 'clearfix';
+      keyboard.append(divBr);
+    }
+
+    keyboard.append(div);
+  }
+}
+
+if (keyboardKeysEngShiftOn)
+  createKeys(keyboardKeysEngShiftOn, keyboardKeysEngShiftOn);
+
+// keyboardKeysEng.forEach((key) => {
+//   const div = document.createElement("div");
+//   div.className = "key";
+//   div.innerHTML = key;
+//   if (key === "Shift") {
+//     const br = document.createElement("br");
+//     br.className = "clearfix";
+//     keyboard.append(br);
+//   }
+//   keyboard.append(div);
+// });

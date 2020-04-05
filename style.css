@@ -11,9 +11,8 @@
 .keyboard {
   position: absolute;
   margin: 0 auto;
-  bottom: 0;
-  width: 100%;
-  max-width: 800px;
+  bottom: 0;  
+  max-width: 1200px;
   background: #2d3829;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   user-select: none;
@@ -23,6 +22,7 @@
   width: 100%;
   left: 50%;
   margin-left: -25%;
+  justify-content: center;
 }
 
 .key {
@@ -40,21 +40,28 @@
   display: inline-flex;
   font-family: 'Roboto', sans-serif;
   justify-content: center;
-  vertical-align: center;
+  align-items: center;
 
   -webkit-tap-highlight-color: transparent;
   position: relative;
 }
 
-.key--extra {
+.key_extra {
   width: 12%;
 }
 
-.key--extra__extra {
+.key_extra-wide {
   width: 36%;
+    max-width: 500px;
 }
 
-.clearfix {
-  display: block;
-  clear: both;
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+  
+}
+
+.key:active {
+  animation: anim-effect 0.5s ease-out forwards;
 }

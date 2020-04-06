@@ -11,17 +11,14 @@
 .keyboard {
   position: absolute;
   margin: 0 auto;
-  bottom: 0;  
-  max-width: 1200px;
+  bottom: 0;    
   background: #2d3829;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   user-select: none;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  left: 50%;
-  margin-left: -25%;
+  width: 100%;   
   justify-content: center;
 }
 
@@ -63,5 +60,6 @@
 }
 
 .key:active {
-  animation: anim-effect 0.5s ease-out forwards;
+  background-color: #cc0;
+    border-radius: 50px;
 }

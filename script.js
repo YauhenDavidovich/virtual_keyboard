@@ -152,8 +152,15 @@ const Keyboard = {
         div.className = "key key_extra-wide";
       }
     }
-  }
+  },
 
+  properties: {
+    capsLock: false,
+    shift: false,
+    rus: false,
+  },
+
+  
 }
 
 window.addEventListener('load', () => {      
@@ -162,5 +169,5 @@ window.addEventListener('load', () => {
       } else if (localStorage.getItem('keyboard') === 'rus') {
         Keyboard.createKeys(keyboardKeysRusShiftOff, keyboardMainKeysRusShiftOff);
       } else Keyboard.createKeys(Keyboard.keyboardKeysRusShiftOff, Keyboard.keyboardMainKeysRusShiftOff);
-      Keyboard.listenRealKeyboard()
-      Keyboard.addClickKeyboardHandler()})
+      Keyboard.listenPhysicalKeyboard();
+      Keyboard.clickKeyboardHandler()})

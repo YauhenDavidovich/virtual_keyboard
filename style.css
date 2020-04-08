@@ -1,4 +1,5 @@
 .textarea {
+  top: 150px;
   margin: auto;
   width: 50%;
   height: 200px;
@@ -62,4 +63,11 @@
 .key:active {
   background-color: #cc0;
     border-radius: 50px;
+}
+
+.describe {
+  top: 15px;  
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
 }

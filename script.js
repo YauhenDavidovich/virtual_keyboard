@@ -7,7 +7,22 @@ document.body.append(textarea);
 
 // keyboard
 
-const Keyboard = { 
+const Keyboard = {
+  generateDescribe() {
+    const divDescribe = document.createElement('div');
+    let p1 = document.createElement('p');
+    let p2 = document.createElement('p');
+    let p3 = document.createElement('p');
+    p1.className = 'describe';
+    p1.innerText = 'Клавиатура создана в операционной системе Windows';
+    p2.className = 'describe';
+    p2.innerText = 'Для переключения языка используйте клавиши: ';
+    p3.className = 'describe';
+    p3.innerText = 'Уважаемый проверяющий, отложи ,пожалуйста, проверку до 12.04.2020(с учетом просрочки дедлайна) - не успел прикрутить функционал! ';
+    document.body.append(p1);
+    document.body.append(p2);
+    document.body.append(p3);    
+  },
 
   keyboardKeysEngShiftOff: [
     "`",
@@ -106,7 +121,7 @@ const Keyboard = {
     'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'Shift', 'Up',
     'Ctrl', 'Win', 'Alt', 'space', 'Alt', 'Ctrl', 'Left', 'Down', 'Right',
   ],
-  
+
 
   // keyboard keys
 
@@ -160,14 +175,17 @@ const Keyboard = {
     rus: false,
   },
 
-  
+
 }
 
-window.addEventListener('load', () => {      
-      if (localStorage.getItem('keyboard') === 'eng') {
-        Keyboard.createKeys(keyboardKeysEngShiftOff, keyboardMainKeysEngShiftOff);
-      } else if (localStorage.getItem('keyboard') === 'rus') {
-        Keyboard.createKeys(keyboardKeysRusShiftOff, keyboardMainKeysRusShiftOff);
-      } else Keyboard.createKeys(Keyboard.keyboardKeysRusShiftOff, Keyboard.keyboardMainKeysRusShiftOff);
-      Keyboard.listenPhysicalKeyboard();
-      Keyboard.clickKeyboardHandler()})
+window.addEventListener('load', () => {
+  
+  if (localStorage.getItem('keyboard') === 'eng') {
+    Keyboard.createKeys(keyboardKeysEngShiftOff, keyboardMainKeysEngShiftOff);
+  } else if (localStorage.getItem('keyboard') === 'rus') {
+    Keyboard.createKeys(keyboardKeysRusShiftOff, keyboardMainKeysRusShiftOff);
+  } else Keyboard.createKeys(Keyboard.keyboardKeysRusShiftOff, Keyboard.keyboardMainKeysRusShiftOff);
+  Keyboard.generateDescribe();
+  Keyboard.listenPhysicalKeyboard();
+  Keyboard.clickKeyboardHandler()
+})

@@ -1,3 +1,7 @@
+body {
+  margin: 0 auto;
+}
+
 .textarea {
   top: 150px;
   margin: auto;
@@ -67,7 +71,15 @@
 
 .describe {
   top: 15px;  
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Roboto', sans-serif;
-  margin: 0 auto;
+  margin: 0 auto;  
+  position: absolute;
+  left: 50%;
+  margin-left: -25%;
+}
+
+.active {
+  background-color: #cc0;
+  border-radius: 50px;
 }

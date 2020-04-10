@@ -374,3 +374,15 @@ window.addEventListener("keyup", (evt) => {
     }
   });
 });
+
+const containerBoard = document.getElementById("keyboard");
+containerBoard.addEventListener("mousedown", (event) => {
+  const activeButton = event.target.closest("button");
+  activeButton.classList.add("active");
+  const cursor = textarea.selectionEnd;
+  const text = textarea.value.split("");
+  text.push(activeButton.textContent);
+  textarea.value = text.join("");
+  textarea.selectionEnd = cursor + 1;
+  activeButton.classList.remove("active");
+});

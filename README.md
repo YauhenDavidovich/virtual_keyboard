@@ -1,1 +1,1 @@
-# virtual_keyboard on vanilla js
+# https://yauhendavidovich.github.io/virtual_keyboard/

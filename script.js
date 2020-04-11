@@ -12,7 +12,7 @@ const Keyboard = {
     const p2 = document.createElement("p");
     divDescribe.className = "describe";
     p1.innerText = "Клавиатура создана в операционной системе Windows";
-    p2.innerText = "Для переключения языка используйте клавиши: ";
+    p2.innerText = "Для переключения языка используйте клавиши: Левый Shift + Левый Alt ";
     divDescribe.append(p1);
     divDescribe.append(p2);
   },

@@ -351,16 +351,14 @@ Keyboard.generateDescribe();
 window.addEventListener("keydown", (evt) => {
   const buttons = document.querySelectorAll("button");
   Keyboard.keyCodes.forEach((item, index) => {
-    if (evt.code === item) {
-      console.log(index);
+    if (evt.code === item) {      
       buttons[index].classList.add("active");
     }
     if (
       buttons[42].classList.contains("active") &&
       buttons[57].classList.contains("active")
     ) {
-      Keyboard.languageChange();
-      console.log("change");
+      Keyboard.languageChange();      
     }
   });
 });
@@ -368,8 +366,7 @@ window.addEventListener("keydown", (evt) => {
 window.addEventListener("keyup", (evt) => {
   const buttons = document.querySelectorAll("button");
   Keyboard.keyCodes.forEach((item, index) => {
-    if (evt.code === item) {
-      console.log(evt.code);
+    if (evt.code === item) {      
       buttons[index].classList.remove("active");
     }
   });
